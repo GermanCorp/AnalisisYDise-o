@@ -219,7 +219,7 @@ public class Fj_Registrar_Cliente extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         Conexion con = new Conexion();
         con.conectar();
-        con.insertar(
+        con.insertarCliente(
             jTextField1.getText(),
             jTextField2.getText(),
             jTextField3.getText(),
