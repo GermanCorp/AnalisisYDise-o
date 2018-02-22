@@ -54,4 +54,18 @@ public class Conexion {
 			System.out.println(e.getMessage());
 		}
 	}
+        
+        public void insertarInventario(String NombreEquipo, String CantidadEquipo, String Descripcion) {
+		try {
+			String sql = "insert into INVENTARIOEQUIPO (NOMBRE_EQUIPO, CANTIDAD, DESCRIPCION) values (?,?,?)";
+			PreparedStatement consulta = conexion.prepareStatement(sql);
+			consulta.setString(1, NombreEquipo);
+			consulta.setString(2, CantidadEquipo);
+			consulta.setString(3, Descripcion);
+			consulta.execute();
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+	}
+   
 }
