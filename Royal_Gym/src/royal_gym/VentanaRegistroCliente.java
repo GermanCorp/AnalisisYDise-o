@@ -9,12 +9,13 @@ package royal_gym;
  *
  * @author alxcr
  */
-public class Fj_Registrar_Cliente extends javax.swing.JFrame {
+public class VentanaRegistroCliente extends javax.swing.JFrame {
 
+    Conexion con = new Conexion();
     /**
      * Creates new form NewJFrame
      */
-    public Fj_Registrar_Cliente() {
+    public VentanaRegistroCliente() {
         initComponents();
     }
 
@@ -217,7 +218,7 @@ public class Fj_Registrar_Cliente extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField5ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        Conexion con = new Conexion();
+        
         con.conectar();
         con.insertarCliente(
             jTextField1.getText(),
@@ -229,7 +230,7 @@ public class Fj_Registrar_Cliente extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        setVisible(false); 
+         setVisible(false);
 // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
 

@@ -1,10 +1,11 @@
 package royal_gym;
 
 public class Inventario extends javax.swing.JFrame {
-    
+
     public Inventario() {
         initComponents();
     }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -125,13 +126,15 @@ public class Inventario extends javax.swing.JFrame {
     }//GEN-LAST:event_BotonSalirActionPerformed
 
     private void BotonAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonAceptarActionPerformed
-        // TODO add your handling code here:
         Conexion C = new Conexion();
         C.conectar();
-        C.insertar(jTextField1.getText(), jTextField2.getText(), jTextField3.getText());
+        C.insertarInventario(
+                jTextField1.getText(), 
+                jTextField2.getText(), 
+                jTextField3.getText());
     }//GEN-LAST:event_BotonAceptarActionPerformed
 
-    
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BotonAceptar;
     private javax.swing.JButton BotonSalir;

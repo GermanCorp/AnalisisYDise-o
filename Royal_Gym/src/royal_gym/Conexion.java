@@ -24,48 +24,43 @@ public class Conexion {
             Logger.getLogger(Conexion.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
-    public int guardar( String sql ) throws SQLException{
-        return statement.executeUpdate(sql);
-    }
-    
+
     // método para cerrar la base de datos
-    public void cerrar(){
+    public void cerrar() {
         try {
             conexion.close();
         } catch (SQLException ex) {
             Logger.getLogger(Conexion.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
-    
+
     // Método para insertar
-	public void insertarCliente(String nombres, String apellidos, String fechaNacimiento, String altura, String peso) {
-		try {
-			String sql = "insert into cliente (nombres, apellidos, fechaNacimiento, altura, peso) values (?,?,?,?,?)";
-			PreparedStatement consulta = conexion.prepareStatement(sql);
-			consulta.setString(1, nombres);
-			consulta.setString(2, apellidos);
-			consulta.setString(3, fechaNacimiento);
-			consulta.setString(4, altura);
-			consulta.setString(5, peso);
-			consulta.execute();
-		} catch (Exception e) {
-			System.out.println(e.getMessage());
-		}
-	}
-        
-        public void insertarInventario(String NombreEquipo, String CantidadEquipo, String Descripcion) {
-		try {
-			String sql = "insert into INVENTARIOEQUIPO (NOMBRE_EQUIPO, CANTIDAD, DESCRIPCION) values (?,?,?)";
-			PreparedStatement consulta = conexion.prepareStatement(sql);
-			consulta.setString(1, NombreEquipo);
-			consulta.setString(2, CantidadEquipo);
-			consulta.setString(3, Descripcion);
-			consulta.execute();
-		} catch (Exception e) {
-			System.out.println(e.getMessage());
-		}
-	}
-   
+    public void insertarCliente(String nombres, String apellidos, String fechaNacimiento, String altura, String peso) {
+        try {
+            String sql = "insert into cliente (nombres, apellidos, fechaNacimiento, altura, peso) values (?,?,?,?,?)";
+            PreparedStatement consulta = conexion.prepareStatement(sql);
+            consulta.setString(1, nombres);
+            consulta.setString(2, apellidos);
+            consulta.setString(3, fechaNacimiento);
+            consulta.setString(4, altura);
+            consulta.setString(5, peso);
+            consulta.execute();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    //Método para insertar artículos al inventario
+    public void insertarInventario(String NombreEquipo, String CantidadEquipo, String Descripcion) {
+        try {
+            String sql = "insert into INVENTARIOEQUIPO (NOMBRE_EQUIPO, CANTIDAD, DESCRIPCION) values (?,?,?)";
+            PreparedStatement consulta = conexion.prepareStatement(sql);
+            consulta.setString(1, NombreEquipo);
+            consulta.setString(2, CantidadEquipo);
+            consulta.setString(3, Descripcion);
+            consulta.execute();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
 }
