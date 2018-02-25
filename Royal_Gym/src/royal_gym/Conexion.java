@@ -8,6 +8,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 public class Conexion {
 
@@ -63,4 +64,25 @@ public class Conexion {
             System.out.println(e.getMessage());
         }
     }
+    
+    public void insertarPagos(String monto, String tiempo) {
+           try{
+       String sql ="insert into Pagos( Monto, Tiempo) values(?,?)";
+       PreparedStatement consulta = conexion.prepareStatement(sql);
+       consulta.setString(1, monto);
+       consulta.setString(1, tiempo); 
+       consulta.execute();
+       
+   }catch(Exception e){
+       System.out.println(e.getMessage());
+    
+    }
+    }
+    
+     public void ValidarInformacion(String mont , String tiemp){
+     if(mont.equals("")|| tiemp.equals("")){
+     
+         JOptionPane.showMessageDialog(null, "No puede dejar espacios en blanco","Error sl guardar los datos",JOptionPane.ERROR_MESSAGE);
+  }
+ }
 }
