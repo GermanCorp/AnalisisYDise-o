@@ -57,7 +57,6 @@
     <Component class="javax.swing.JButton" name="jButton2">
       <Properties>
         <Property name="text" type="java.lang.String" value="Registrar Cliente"/>
-        <Property name="actionCommand" type="java.lang.String" value="Registrar Cliente"/>
         <Property name="inheritsPopupMenu" type="boolean" value="true"/>
       </Properties>
       <Events>

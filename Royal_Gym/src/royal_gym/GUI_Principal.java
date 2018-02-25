@@ -1,8 +1,8 @@
 
 package royal_gym;
-public class VentanaPrincipal extends javax.swing.JFrame {
+public class GUI_Principal extends javax.swing.JFrame {
 
-    public VentanaPrincipal() {
+    public GUI_Principal() {
         initComponents();
     }
     @SuppressWarnings("unchecked")
@@ -18,7 +18,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jbRegistrarPago.setText("Registrar Pago");
 
         jButton2.setText("Registrar Cliente");
-        jButton2.setActionCommand("Registrar Cliente");
         jButton2.setInheritsPopupMenu(true);
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -56,7 +55,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        VentanaRegistroCliente ventanaRegistrarCliente = new VentanaRegistroCliente();
+        GUI_RegistrarCliente ventanaRegistrarCliente = new GUI_RegistrarCliente();
         ventanaRegistrarCliente.setVisible(true);
         ventanaRegistrarCliente.setLocationRelativeTo(this);
     }//GEN-LAST:event_jButton2ActionPerformed
