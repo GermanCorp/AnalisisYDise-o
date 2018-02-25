@@ -54,7 +54,7 @@ public class Conexion {
     //Método para insertar artículos al inventario
     public void insertarInventario(String NombreEquipo, String CantidadEquipo, String Descripcion) {
         try {
-            String sql = "insert into INVENTARIOEQUIPO (NOMBRE_EQUIPO, CANTIDAD, DESCRIPCION) values (?,?,?)";
+            String sql = "insert into inventario (nombre, cantidad, descripcion) values (?,?,?)";
             PreparedStatement consulta = conexion.prepareStatement(sql);
             consulta.setString(1, NombreEquipo);
             consulta.setString(2, CantidadEquipo);
